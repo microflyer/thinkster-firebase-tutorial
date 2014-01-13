@@ -5,7 +5,7 @@ angular.module('fantasyApp.controllers.header', ['fantasyApp.services.login'])
     function($scope, $location, loginService, angularFire, FBURL) {
 
       $scope.$on("angularFireAuth:login", function() {
-
+        angularFire(new Firebase(FBURL + '/users/' + $scope.auth.id), $scope, 'user');
       });
 
       $scope.logout = function() {
