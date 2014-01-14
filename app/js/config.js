@@ -6,11 +6,15 @@ angular.module('fantasyApp.config', [])
 app.config(['$routeProvider', 
     function($routeProvider) {
       $routeProvider
-      .when('/',         { templateUrl: 'views/default.html' })
-      .when('/signin',   { templateUrl: 'views/users/signin.html' })
-      .when('/signup',   { templateUrl: 'views/users/signup.html' })
-      .when('/nflteams', { templateUrl: 'views/nfl/list.html', authRequired: true })
-      .when('/nflteams/:nflTeamId', {templateUrl: 'views/nfl/view.html', authRequired: true })
+      .when('/',                        { templateUrl: 'views/default.html' })
+      .when('/signin',                  { templateUrl: 'views/users/signin.html' })
+      .when('/signup',                  { templateUrl: 'views/users/signup.html' })
+      .when('/nflteams',                { templateUrl: 'views/nfl/list.html', authRequired: true })
+      .when('/nflteams/:nflTeamId',     { templateUrl: 'views/nfl/view.html', authRequired: true })
+      .when('/leagues',                 { templateUrl: 'views/leagues/list.html', authRequired: true })
+      .when('/leagues/create',          { templateUrl: 'views/leagues/edit.html', authRequired: true })
+      .when('/leagues/:leagueId',       { templateUrl: 'views/leagues/view.html', authRequired: true })
+      .when('/leagues/:leagueId/edit',  { templateUrl: 'views/leagues/edit.html', authRequired: true })
       .otherwise(       { redirectTo: '/' });
     }])
   
