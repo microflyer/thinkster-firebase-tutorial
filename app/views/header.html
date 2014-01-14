@@ -1,6 +1,9 @@
 <div class="navbar-inner ng-scope" ng-controller="HeaderController">
   <ul class="nav">
     <li><a class="brand" href="#/">ngFantasyFootball</a></li>
+    <li ng-repeat="entry in navbarEntries" ng-show="auth" ng-class="{ active: entry.isActive }">
+      <a href="#{{entry.link}}">{{entry.title}}</a>
+    </li>
   </ul>
   <ul class="nav pull-right" ng-hide="auth">
     <li><a href="#/signup">Signup</a></li>

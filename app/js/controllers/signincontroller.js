@@ -4,7 +4,9 @@ angular.module('fantasyApp.controllers.signin', ['fantasyApp.services.login'])
   .controller('SigninCtrl', ['$scope', 'loginService', '$location',
     function($scope, loginService, $location) {
 
-      if (!!scope.auth) {
+      console.log("SigninCtrl controller is loaded!");
+
+      if (!!$scope.auth) {
         $location.path('/');
       }
 
@@ -20,7 +22,7 @@ angular.module('fantasyApp.controllers.signin', ['fantasyApp.services.login'])
         $scope.err = null;
         loginService.login($scope.email, $scope.pass, '/', function(err, user) {
           $scope.err = err||null;
-          typeof(callback) === 'function' && callback(err, user);
+          //typeof(callback) === 'function' && callback(err, user);
         });
       };
     }])
