@@ -18,9 +18,13 @@ angular.module('fantasyApp.controllers.leagues', ['fantasyApp.services.leagues']
       }
  
       $scope.createLeague = function() {
-        var leagueId = Leagues.create($scope.league, $scope.auth);
-        $scope.league = null;
-        $location.path('/leagues/'+leagueId);
+        var leagueId = Leagues.create($scope.league, $scope.auth, function(err) {
+          if (!err) {
+            $scope.league = null;
+            $location.path('/leagues/'+leagueId);
+            $scope.$apply();
+          }
+        });
       }
  
       $scope.removeLeague = function(leagueId) {
