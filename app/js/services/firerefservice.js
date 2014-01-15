@@ -8,6 +8,9 @@ angular.module('fantasyApp.services.firebaseRefs', [])
             },
             users: function () {
                 return new Firebase(FBURL + '/users');
-            }
+            },
+            players: function() {
+                return new Firebase(FBURL + '/players');
+        }
         }
     }])

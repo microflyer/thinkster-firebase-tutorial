@@ -15,6 +15,8 @@ app.config(['$routeProvider',
       .when('/leagues/create',          { templateUrl: 'views/leagues/edit.html', authRequired: true })
       .when('/leagues/:leagueId',       { templateUrl: 'views/leagues/view.html', authRequired: true })
       .when('/leagues/:leagueId/edit',  { templateUrl: 'views/leagues/edit.html', authRequired: true })
+      .when('/players',                 { templateUrl: 'views/players/list.html', authRequired: true })
+      .when('/players/:playerId',       { templateUrl: 'views/players/view.html', authRequired: true })
       .otherwise(       { redirectTo: '/' });
     }])
   
