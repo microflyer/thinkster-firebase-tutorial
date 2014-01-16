@@ -25,6 +25,10 @@ angular.module('fantasyApp.controllers.header', ['fantasyApp.services.login'])
         {
           "title": "Players",
           "link": "/players"
+        },
+        {
+          "title": "Fantasy Teams",
+          "link": "/fantasyteams"
         }
       ];
 
